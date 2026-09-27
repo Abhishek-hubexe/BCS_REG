@@ -4,14 +4,26 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const jsonPath = path.join(__dirname, 'bcs_data.json');
+const defaultJsonPath = path.join(__dirname, 'bcs_data.json');
+const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const jsonPath = isServerless ? path.join('/tmp', 'bcs_data.json') : defaultJsonPath;
+
+// Initialize /tmp/bcs_data.json from default bundled data if on serverless
+if (isServerless && !fs.existsSync(jsonPath) && fs.existsSync(defaultJsonPath)) {
+  try {
+    fs.copyFileSync(defaultJsonPath, jsonPath);
+  } catch (e) {
+    console.error('Failed to copy initial data to /tmp:', e);
+  }
+}
 
 export function loadData() {
   try {
-    if (!fs.existsSync(jsonPath)) {
+    const target = fs.existsSync(jsonPath) ? jsonPath : defaultJsonPath;
+    if (!fs.existsSync(target)) {
       return { users: [], clubs: [], registrations: [], events: [], announcements: [], audit_logs: [], media_library: [] };
     }
-    const raw = fs.readFileSync(jsonPath, 'utf8');
+    const raw = fs.readFileSync(target, 'utf8');
     return JSON.parse(raw);
   } catch (err) {
     console.error('Error reading bcs_data.json:', err);

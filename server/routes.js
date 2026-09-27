@@ -129,70 +129,73 @@ router.use(authenticate);
 
 // Student Registration
 router.post('/auth/register', [
-  body('name').trim().escape().notEmpty(),
-  body('email').isEmail().normalizeEmail(),
-  body('password').isLength({ min: 6 }),
-  body('department').trim().escape(),
-  body('year').trim().escape(),
-  body('phone_whatsapp').trim().escape(),
-  body('csn_esn').trim().escape(),
+  body('name').trim().notEmpty().withMessage('Full name is required'),
+  body('email').isEmail().normalizeEmail().withMessage('Valid email is required'),
+  body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
 ], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ error: 'Validation failed', details: errors.array() });
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const firstMsg = errors.array()[0]?.msg || 'Validation failed';
+      return res.status(400).json({ error: firstMsg, details: errors.array() });
+    }
+
+    const { name, email, department, year, phone_whatsapp, csn_esn, password, confirmPassword } = req.body;
+
+    if (confirmPassword && password !== confirmPassword) {
+      return res.status(400).json({ error: 'Passwords do not match.' });
+    }
+
+    const normalizedEmail = (email || '').trim().toLowerCase();
+    const data = loadData();
+
+    const existingUser = (data.users || []).find(u => u.email && u.email.toLowerCase() === normalizedEmail);
+    if (existingUser) {
+      return res.status(400).json({ error: 'Email is already registered. Please sign in.' });
+    }
+
+    const newId = (data.users && data.users.length > 0) ? Math.max(...data.users.map(u => u.id || 0)) + 1 : 1;
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const newUser = {
+      id: newId,
+      name: xss(name || ''),
+      email: normalizedEmail,
+      department: xss(department || 'CS'),
+      year: xss(year || '1st Year'),
+      phone_whatsapp: xss(phone_whatsapp || ''),
+      csn_esn: xss(csn_esn || ''),
+      password: hashedPassword,
+      role: 'student',
+      avatar: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
+      created_at: new Date().toISOString()
+    };
+
+    if (!data.users) data.users = [];
+    data.users.push(newUser);
+    saveData(data);
+
+    // Sync to Supabase in background
+    syncStudentToSupabase(newUser).catch(err => console.error('Supabase sync error:', err));
+
+    addAuditLog(name, 'Student Account Created', `Student ID #${newId} (${name})`);
+
+    const { password: _, ...userSafe } = newUser;
+    
+    const token = jwt.sign({ id: userSafe.id, role: userSafe.role, email: userSafe.email }, JWT_SECRET, { expiresIn: '1d' });
+    res.cookie('access_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 24 * 60 * 60 * 1000 // 1 day
+    });
+
+    res.json({ message: 'Registration successful!', user: userSafe, token });
+  } catch (err) {
+    console.error('Registration error:', err);
+    res.status(500).json({ error: err.message || 'Registration failed. Please try again.' });
   }
-
-  const { name, email, department, year, phone_whatsapp, csn_esn, password, confirmPassword } = req.body;
-
-  if (confirmPassword && password !== confirmPassword) {
-    return res.status(400).json({ error: 'Passwords do not match.' });
-  }
-
-  const normalizedEmail = email.trim().toLowerCase();
-  const data = loadData();
-
-  const existingUser = data.users.find(u => u.email.toLowerCase() === normalizedEmail);
-  if (existingUser) {
-    return res.status(400).json({ error: 'Email is already registered.' });
-  }
-
-  const newId = data.users.length > 0 ? Math.max(...data.users.map(u => u.id)) + 1 : 1;
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(password, salt);
-
-  const newUser = {
-    id: newId,
-    name: xss(name),
-    email: normalizedEmail,
-    department: xss(department),
-    year: xss(year),
-    phone_whatsapp: xss(phone_whatsapp),
-    csn_esn: xss(csn_esn),
-    password: hashedPassword,
-    role: 'student',
-    avatar: `https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80`,
-    created_at: new Date().toISOString()
-  };
-
-  data.users.push(newUser);
-  saveData(data);
-
-  // Sync to Supabase in background
-  syncStudentToSupabase(newUser).catch(err => console.error('Supabase sync error:', err));
-
-  addAuditLog(name, 'Student Account Created', `Student ID #${newId} (${name})`);
-
-  const { password: _, ...userSafe } = newUser;
-  
-  const token = jwt.sign({ id: userSafe.id, role: userSafe.role, email: userSafe.email }, JWT_SECRET, { expiresIn: '1d' });
-  res.cookie('access_token', token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 24 * 60 * 60 * 1000 // 1 day
-  });
-
-  res.json({ message: 'Registration successful!', user: userSafe });
 });
 
 // Login (Admin & Student)
