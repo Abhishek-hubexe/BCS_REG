@@ -4,116 +4,568 @@
       "id": 1,
       "name": "System Administrator",
       "email": "admin",
-      "department": "Management",
-      "year": "Admin",
-      "phone_whatsapp": "0000000000",
+      "department": "Admin",
+      "year": "Staff",
+      "phone_whatsapp": "+91 98860 12345",
       "csn_esn": "ADMIN-001",
-      "password": "admin@123",
+      "password": "$2b$10$nNt8I5GqPp2.XZMUyeKx5eaNM7J1.rkH8b/RuUyc7kKH0DK.gJzgG",
       "role": "admin",
-      "created_at": "2026-09-16T15:23:19.258Z"
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-01T09:00:00.000Z"
     },
     {
       "id": 2,
-      "name": "FHTFD",
-      "email": "zdad@gmail.com",
-      "department": "Computer Science & Engineering (CSE)",
+      "name": "1d",
+      "email": "admin@creativespectrum.org",
+      "department": "CS",
       "year": "1st Year",
-      "phone_whatsapp": "RGARGERGER",
-      "csn_esn": "ZFBDDRGRA",
-      "password": "1234567890",
+      "phone_whatsapp": "11",
+      "csn_esn": "wf",
+      "password": "$2b$10$UHLwomDBO7lXI9U1g9E8Kuj00CwmRjy2LWQxjU2boKknBMF8GKmmq",
       "role": "student",
-      "created_at": "2026-09-16T15:31:22.028Z"
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "interests": [
+        "Technical",
+        "Creative",
+        "Technical & Coding",
+        "Cultural & Theatre",
+        "Photojournalism & Media"
+      ],
+      "created_at": "2026-09-20T16:31:28.004Z"
+    },
+    {
+      "id": 3,
+      "name": "al",
+      "email": "abhishekhallur2007@gmail.com",
+      "department": "ECE",
+      "year": "1st Year",
+      "phone_whatsapp": "11",
+      "csn_esn": "11",
+      "password": "$2b$10$KWxtT76zAFz3XvyAh4U4sulMwElqs69sNWbx4Ghu8pohEtz3iboQK",
+      "role": "student",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "interests": [
+        "Technical",
+        "Creative",
+        "Photojournalism & Media",
+        "Technical & Coding",
+        "Music & Production"
+      ],
+      "created_at": "2026-09-20T19:32:35.063Z"
+    },
+    {
+      "id": 4,
+      "name": "Test User",
+      "email": "test.user@college.edu",
+      "department": "CS",
+      "year": "1st Year",
+      "phone_whatsapp": "9876543210",
+      "csn_esn": "CSN2026002",
+      "password": "$2b$10$81CZZWi.gmrU/f/PLFxMO.oY93Y05aPYb84mhnNPRNgh6qUHojrta",
+      "role": "student",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-27T11:57:21.705Z"
+    },
+    {
+      "id": 5,
+      "name": "Supabase Test Student",
+      "email": "supabase.test@college.edu",
+      "department": "ECE",
+      "year": "2nd Year",
+      "phone_whatsapp": "9988776655",
+      "csn_esn": "CSN2026999",
+      "password": "$2b$10$RLD/8T2LkvQYYFMmbRxhMug6KlINuNqHk8NIGJ75p8MQbG8QE1W8W",
+      "role": "student",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-27T12:28:40.326Z"
+    },
+    {
+      "id": 6,
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@bcs.edu",
+      "department": "CS",
+      "year": "2nd Year",
+      "phone_whatsapp": "+91 9876543210",
+      "csn_esn": "CSN2026101",
+      "password": "$2b$10$sszQ/4EbMMaPMtJodQk1WOSxFF/w3DgumEBW5DyV2kGkcDO32MqCm",
+      "role": "student",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "created_at": "2026-09-27T12:34:20.324Z"
     }
   ],
   "clubs": [
     {
       "id": 1,
-      "name": "Tech Spectrum",
-      "easy_meaning": "Coding & Software Innovation",
+      "name": "Technical & Coding Guild",
+      "code": "CS-01",
       "category": "Technical",
-      "description": "The premier technological wing of BC Creative Spectrum. Focuses on full-stack development, software engineering, algorithms, and real-world project development.",
-      "audition_process": "1. Short online logic & coding assessment.\n2. 10-minute technical interview discussing your project interest.",
-      "badge_color": "#3b82f6"
+      "tagline": "Code the future, solve tough algorithmic challenges.",
+      "description": "The premier technical club dedicated to algorithms, competitive coding, hackathons, and software engineering.",
+      "logo": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=120&auto=format&fit=crop&q=80",
+      "cover_image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&auto=format&fit=crop&q=80",
+      "accent_color": "#06b6d4",
+      "members_count": 1,
+      "president": "Tech Lead",
+      "vice_president": "Co-Lead",
+      "contact_email": "tech@creativespectrum.org",
+      "status": "active"
     },
     {
       "id": 2,
-      "name": "Nexus Cultural",
-      "easy_meaning": "Dance, Drama & Stage Arts",
+      "name": "Cultural & Theatre Society",
+      "code": "CS-02",
       "category": "Cultural",
-      "description": "The beating heart of expression at BCS. Brings together dancers, actors, stage performers, and theatrical artists for major college events and national fests.",
-      "audition_process": "1. 1-to-2 minute live solo performance (Dance/Drama/Mono-act).\n2. Brief interaction with cultural leads.",
-      "badge_color": "#ec4899"
-    },
-    {
-      "id": 3,
-      "name": "Pixel Crafts",
-      "easy_meaning": "UI/UX, Visual Design & Video",
-      "category": "Creative",
-      "description": "Visual storytellers and digital creators. Mastering graphic design, UI/UX wireframing, motion graphics, video editing, and 3D artwork.",
-      "audition_process": "1. Showcase your portfolio or sample graphics/video reel.\n2. On-spot 20-minute design challenge based on a given prompt.",
-      "badge_color": "#a855f7"
-    },
-    {
-      "id": 4,
-      "name": "Code Catalyst",
-      "easy_meaning": "AI, Data Science & Cybersecurity",
-      "category": "Technical",
-      "description": "Delving into artificial intelligence, machine learning models, cloud computing, and ethical hacking through hands-on workshops and hackathons.",
-      "audition_process": "1. Quiz on Python/C++/Data Basics.\n2. Discussion on AI/ML or Security concepts you are passionate about.",
-      "badge_color": "#06b6d4"
-    },
-    {
-      "id": 5,
-      "name": "Innovators Club",
-      "easy_meaning": "Entrepreneurship & Leadership",
-      "category": "Non-Technical",
-      "description": "Cultivating business minds, startup founders, event organizers, and public relations managers for corporate outreach and fest execution.",
-      "audition_process": "1. Group discussion on a business case scenario.\n2. Personal interview focusing on leadership and management skills.",
-      "badge_color": "#eab308"
-    },
-    {
-      "id": 6,
-      "name": "Rhythm & Beats",
-      "easy_meaning": "Music Production & Vocals",
-      "category": "Cultural",
-      "description": "Vocalists, instrumentalists, beatmakers, and audio production enthusiasts organizing live acoustic sessions, bands, and college anthems.",
-      "audition_process": "1. Perform one song/instrumental piece of your choice (up to 2 mins).\n2. Scale check and pitch assessment.",
-      "badge_color": "#10b981"
-    },
-    {
-      "id": 7,
-      "name": "Cyber Esports",
-      "easy_meaning": "Competitive Gaming & Game Dev",
-      "category": "Gaming",
-      "description": "Bringing together competitive gamers, tournament shoutcasters, stream managers, and aspiring indie game developers.",
-      "audition_process": "1. 1v1 or team tactical match evaluation.\n2. Interview on game strategy or game engine knowledge (Unity/Unreal).",
-      "badge_color": "#f97316"
-    },
-    {
-      "id": 8,
-      "name": "Literary Wave",
-      "easy_meaning": "Debating, Writing & Journalism",
-      "category": "Literature",
-      "description": "The official editorial, debating, and creative writing guild. Editing college magazines, hosting MUNs, debates, and poetry slams.",
-      "audition_process": "1. 300-word written essay or poem submission.\n2. 2-minute impromptu speaking round (Extempore).",
-      "badge_color": "#6366f1"
+      "tagline": "Drama, music, dance and artistic expression.",
+      "description": "For all creative souls passionate about theatre, acting, vocal music, dance, and cultural events.",
+      "logo": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=120&auto=format&fit=crop&q=80",
+      "cover_image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&auto=format&fit=crop&q=80",
+      "accent_color": "#ec4899",
+      "members_count": 0,
+      "president": "Cultural Secretary",
+      "vice_president": "Vice Secretary",
+      "contact_email": "culture@creativespectrum.org",
+      "status": "active"
     }
   ],
   "registrations": [
     {
       "id": 1,
-      "user_id": 2,
-      "club_id": 4,
-      "created_at": "2026-09-16T15:31:40.588Z"
+      "reg_code": "REG-2026-001",
+      "user_id": 6,
+      "club_id": 1,
+      "status": "pending",
+      "notes": "Submitted via Creative Spectrum registration portal.",
+      "created_at": "2026-09-27T12:35:15.460Z"
     }
   ],
-  "announcements": [
+  "events": [],
+  "announcements": [],
+  "audit_logs": [
+    {
+      "id": 53,
+      "admin_name": "Aarav Sharma",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for Technical & Coding Guild",
+      "timestamp": "2026-09-27T12:35:15.461Z"
+    },
+    {
+      "id": 52,
+      "admin_name": "Aarav Sharma",
+      "action": "Student Account Created",
+      "object_name": "Student ID #6 (Aarav Sharma)",
+      "timestamp": "2026-09-27T12:34:20.325Z"
+    },
+    {
+      "id": 51,
+      "admin_name": "Supabase Test Student",
+      "action": "Student Account Created",
+      "object_name": "Student ID #5 (Supabase Test Student)",
+      "timestamp": "2026-09-27T12:28:40.328Z"
+    },
+    {
+      "id": 50,
+      "admin_name": "Test User",
+      "action": "Student Account Created",
+      "object_name": "Student ID #4 (Test User)",
+      "timestamp": "2026-09-27T11:57:21.707Z"
+    },
+    {
+      "id": 49,
+      "admin_name": "System Administrator",
+      "action": "Deleted Official Link: YouTube Channel",
+      "object_name": "https://youtube.com/@bcs_spectrum",
+      "timestamp": "2026-09-27T09:51:53.394Z"
+    },
+    {
+      "id": 48,
+      "admin_name": "System Administrator",
+      "action": "Updated Official Links & Spectrum Branding",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-27T09:51:45.126Z"
+    },
+    {
+      "id": 47,
+      "admin_name": "System Administrator",
+      "action": "Updated Spectrum Branding & Social Channels",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-27T09:50:55.526Z"
+    },
+    {
+      "id": 46,
+      "admin_name": "System Administrator",
+      "action": "Updated Spectrum Branding & Social Channels",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-27T09:42:23.551Z"
+    },
+    {
+      "id": 45,
+      "admin_name": "System Administrator",
+      "action": "Updated Spectrum Branding & Social Channels",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-24T18:01:11.220Z"
+    },
+    {
+      "id": 44,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "1212",
+      "timestamp": "2026-09-24T17:52:42.033Z"
+    },
+    {
+      "id": 43,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "Xd",
+      "timestamp": "2026-09-24T16:36:26.204Z"
+    },
+    {
+      "id": 42,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "Test Club To Delete",
+      "timestamp": "2026-09-24T15:00:39.817Z"
+    },
+    {
+      "id": 41,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "Test Club To Delete (CS-03)",
+      "timestamp": "2026-09-24T15:00:39.773Z"
+    },
+    {
+      "id": 40,
+      "admin_name": "System Administrator",
+      "action": "Uploaded cover asset",
+      "object_name": "1212 (01_bec_swara.png)",
+      "timestamp": "2026-09-23T03:05:51.638Z"
+    },
+    {
+      "id": 39,
+      "admin_name": "System Administrator",
+      "action": "Uploaded logo asset",
+      "object_name": "1212 (swara.jpeg)",
+      "timestamp": "2026-09-23T03:05:51.622Z"
+    },
+    {
+      "id": 38,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "1212 (CS-02)",
+      "timestamp": "2026-09-23T03:05:51.610Z"
+    },
+    {
+      "id": 37,
+      "admin_name": "System Administrator",
+      "action": "Uploaded cover asset",
+      "object_name": "Xd (05_bec_dev.png)",
+      "timestamp": "2026-09-23T03:05:08.235Z"
+    },
+    {
+      "id": 36,
+      "admin_name": "System Administrator",
+      "action": "Uploaded logo asset",
+      "object_name": "Xd (dev.jpeg)",
+      "timestamp": "2026-09-23T03:05:08.216Z"
+    },
+    {
+      "id": 35,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "Xd (CS-01)",
+      "timestamp": "2026-09-23T03:05:08.196Z"
+    },
+    {
+      "id": 34,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "ef",
+      "timestamp": "2026-09-22T17:53:26.932Z"
+    },
+    {
+      "id": 33,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "dev",
+      "timestamp": "2026-09-22T17:53:25.213Z"
+    },
+    {
+      "id": 32,
+      "admin_name": "System Administrator",
+      "action": "Updated Application Edit Window",
+      "object_name": "Status: open (Enabled: true, Range: 2026-09-01T00:00:00.000Z to 2026-09-30T23:59:59.000Z)",
+      "timestamp": "2026-09-22T17:37:50.755Z"
+    },
+    {
+      "id": 31,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "al → Club",
+      "timestamp": "2026-09-21T15:59:55.737Z"
+    },
+    {
+      "id": 30,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "ef (CS-02)",
+      "timestamp": "2026-09-21T15:23:38.716Z"
+    },
+    {
+      "id": 29,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "al → dev",
+      "timestamp": "2026-09-21T15:23:14.192Z"
+    },
+    {
+      "id": 28,
+      "admin_name": "System Administrator",
+      "action": "Approved Registration",
+      "object_name": "al → dev",
+      "timestamp": "2026-09-21T15:23:13.280Z"
+    },
+    {
+      "id": 27,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "al → dev",
+      "timestamp": "2026-09-21T15:23:12.545Z"
+    },
+    {
+      "id": 26,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "1d → dev",
+      "timestamp": "2026-09-21T15:23:09.921Z"
+    },
+    {
+      "id": 25,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "al → Club",
+      "timestamp": "2026-09-21T15:23:09.168Z"
+    },
+    {
+      "id": 24,
+      "admin_name": "System Administrator",
+      "action": "Rejected Registration",
+      "object_name": "al → dev",
+      "timestamp": "2026-09-21T15:23:07.962Z"
+    },
+    {
+      "id": 23,
+      "admin_name": "1d",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for 1 club(s)",
+      "timestamp": "2026-09-20T19:45:13.641Z"
+    },
+    {
+      "id": 22,
+      "admin_name": "System Administrator",
+      "action": "Updated Club Info",
+      "object_name": "dev",
+      "timestamp": "2026-09-20T19:44:48.063Z"
+    },
+    {
+      "id": 21,
+      "admin_name": "System Administrator",
+      "action": "Uploaded logo asset",
+      "object_name": "dev (dev.jpeg)",
+      "timestamp": "2026-09-20T19:44:10.458Z"
+    },
+    {
+      "id": 20,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "dev (CS-01)",
+      "timestamp": "2026-09-20T19:44:10.440Z"
+    },
+    {
+      "id": 19,
+      "admin_name": "al",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for 2 club(s)",
+      "timestamp": "2026-09-20T19:32:35.065Z"
+    },
+    {
+      "id": 18,
+      "admin_name": "System Administrator",
+      "action": "Updated Club Info",
+      "object_name": "adsad",
+      "timestamp": "2026-09-20T19:30:25.946Z"
+    },
+    {
+      "id": 17,
+      "admin_name": "System Administrator",
+      "action": "Updated Club Info",
+      "object_name": "adsad",
+      "timestamp": "2026-09-20T19:29:57.095Z"
+    },
+    {
+      "id": 16,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "abhinaya",
+      "timestamp": "2026-09-20T19:29:13.668Z"
+    },
+    {
+      "id": 15,
+      "admin_name": "System Administrator",
+      "action": "Deleted Club",
+      "object_name": "Robotics",
+      "timestamp": "2026-09-20T19:29:12.053Z"
+    },
+    {
+      "id": 14,
+      "admin_name": "System Administrator",
+      "action": "Uploaded logo asset",
+      "object_name": "adsad (cinelab.jpeg)",
+      "timestamp": "2026-09-20T18:55:50.455Z"
+    },
+    {
+      "id": 13,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "adsad (CS-03)",
+      "timestamp": "2026-09-20T18:55:50.439Z"
+    },
+    {
+      "id": 12,
+      "admin_name": "System Administrator",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for 2 club(s)",
+      "timestamp": "2026-09-20T16:31:28.007Z"
+    },
+    {
+      "id": 11,
+      "admin_name": "System Administrator",
+      "action": "Updated Spectrum Branding",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-19T18:18:16.184Z"
+    },
+    {
+      "id": 10,
+      "admin_name": "System Administrator",
+      "action": "Uploaded Custom Spectrum Logo",
+      "object_name": "WhatsApp Image 2026-09-19 at 11.39.57 PM.jpeg",
+      "timestamp": "2026-09-19T18:18:16.172Z"
+    },
+    {
+      "id": 9,
+      "admin_name": "System Administrator",
+      "action": "Updated Spectrum Branding",
+      "object_name": "Creative Spectrum",
+      "timestamp": "2026-09-19T18:17:49.189Z"
+    },
+    {
+      "id": 8,
+      "admin_name": "Priya Sharma",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for 1 club(s)",
+      "timestamp": "2026-09-19T17:51:05.171Z"
+    },
+    {
+      "id": 7,
+      "admin_name": "Priya Sharma",
+      "action": "Submitted Club Registration",
+      "object_name": "Registered for 2 club(s)",
+      "timestamp": "2026-09-19T17:51:05.165Z"
+    },
+    {
+      "id": 6,
+      "admin_name": "System Administrator",
+      "action": "Updated Club Branding",
+      "object_name": "Robotics Visual Identity",
+      "timestamp": "2026-09-19T17:28:30.557Z"
+    },
+    {
+      "id": 5,
+      "admin_name": "System Administrator",
+      "action": "Uploaded cover asset",
+      "object_name": "Robotics (dev.jpeg)",
+      "timestamp": "2026-09-19T17:28:13.140Z"
+    },
+    {
+      "id": 4,
+      "admin_name": "System Administrator",
+      "action": "Updated Club Branding",
+      "object_name": "Robotics Visual Identity",
+      "timestamp": "2026-09-19T17:27:33.651Z"
+    },
+    {
+      "id": 3,
+      "admin_name": "System Administrator",
+      "action": "Uploaded logo asset",
+      "object_name": "Robotics (dev.jpeg)",
+      "timestamp": "2026-09-19T17:27:29.122Z"
+    },
+    {
+      "id": 2,
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "abhinaya (CS-02)",
+      "timestamp": "2026-09-19T17:26:06.721Z"
+    },
     {
       "id": 1,
-      "title": "Welcome to BC Creative Spectrum Auditions 2026!",
-      "description": "Auditions for all 8 clubs are officially open! Registered students can select up to 2 clubs to give auditions. Check the club notices for dates and audition guidelines.",
-      "image_url": null,
-      "created_at": "2026-09-16T15:23:19.259Z"
+      "admin_name": "System Administrator",
+      "action": "Created Club",
+      "object_name": "Robotics (CS-01)",
+      "timestamp": "2026-09-19T17:25:46.546Z"
     }
-  ]
+  ],
+  "media_library": [
+    {
+      "id": 3,
+      "name": "WhatsApp Image 2026-09-19 at 11.39.57 PM.jpeg",
+      "category": "Spectrum Identity",
+      "url": "/uploads/file-1789841896166-300899707.jpeg",
+      "club_id": null,
+      "club_name": "Creative Spectrum Hub",
+      "size": "41 KB",
+      "uploaded_at": "2026-09-19"
+    }
+  ],
+  "spectrum_config": {
+    "title": "Creative Spectrum",
+    "tagline": "Collegiate Guilds Platform",
+    "logo_url": "/uploads/file-1789841896166-300899707.jpeg",
+    "accent_color": "#C25E42",
+    "instagram_url": "https://instagram.com/bcs_spectrum",
+    "whatsapp_channel_url": "https://whatsapp.com/channel/bcs",
+    "social_links_badge": "OFFICIAL CHANNELS",
+    "social_links_title": "Join Our Community Channels",
+    "social_links_subtitle": "Stay connected for real-time announcements, audition notifications, and club highlights.",
+    "official_links": [
+      {
+        "id": "link-1",
+        "platform": "instagram",
+        "title": "Instagram",
+        "handle": "@bcs_spectrum",
+        "url": "https://instagram.com/bcs_spectrum",
+        "description": "Stories, reels, & event highlights",
+        "tag": "INSTAGRAM",
+        "active": true,
+        "order": 1
+      },
+      {
+        "id": "link-2",
+        "platform": "whatsapp",
+        "title": "WhatsApp Channel",
+        "handle": "Official WhatsApp Broadcast",
+        "url": "https://whatsapp.com/channel/bcs",
+        "description": "Instant audition & registration alerts",
+        "tag": "WHATSAPP CHANNEL",
+        "active": true,
+        "order": 2
+      }
+    ]
+  },
+  "registration_settings": {
+    "edit_window": {
+      "enabled": true,
+      "start_time": "2026-09-01T00:00:00.000Z",
+      "end_time": "2026-09-30T23:59:59.000Z",
+      "instructions": "Application edit window is currently open. You may update your guild selection and application details in your profile."
+    }
+  }
 }

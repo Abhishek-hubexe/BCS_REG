@@ -1,6 +1,30 @@
 import React from 'react';
 
-export default function BCSLogo({ className = "w-24 h-24", animated = true }) {
+export default function BCSLogo({ className = "w-24 h-24", animated = true, customLogoUrl = null }) {
+  if (customLogoUrl) {
+    return (
+      <div className={`relative flex items-center justify-center ${className}`}>
+        {/* Multi-layered animated aura rings */}
+        <div className={`absolute -inset-4 rounded-full border border-[#C25E42]/15 ${animated ? 'animate-spin-slow' : ''}`} />
+        <div className={`absolute -inset-2.5 rounded-full border border-dashed border-[#C28B38]/25 ${animated ? 'animate-reverse-spin' : ''}`} />
+        <div className={`absolute -inset-1 rounded-full border border-[#5D7A68]/15 ${animated ? 'animate-spin-slow' : ''}`} style={{ animationDuration: '12s' }} />
+        
+        {/* Soft outer glow */}
+        <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-[#C25E42]/8 via-transparent to-[#C28B38]/8 blur-sm pointer-events-none" />
+        
+        {/* Main logo container — clean white background to match the logo's native design */}
+        <div className="relative w-full h-full rounded-full overflow-hidden bg-white shadow-xl border-2 border-[#E7E0D8] flex items-center justify-center p-1.5">
+          <img
+            src={customLogoUrl}
+            alt="BEC Creative Spectrum"
+            className="w-full h-full object-contain"
+            style={{ borderRadius: '50%' }}
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`relative flex items-center justify-center ${className}`}>
       {/* Outer Glow Ring */}

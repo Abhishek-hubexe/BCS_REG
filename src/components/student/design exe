@@ -1,0 +1,805 @@
+Design a complete, production-ready STUDENT PORTAL for a college club platform called “SPECTRUM — CLUB AUDITIONS ’26”.
+
+IMPORTANT:
+Use the uploaded reference image as the primary visual and art-direction reference.
+
+Recreate the same visual personality, composition language, typography style, photography treatment, handwritten annotations, scrapbook elements, and youthful college atmosphere.
+
+However, this is NOT a landing page.
+
+This is an authenticated STUDENT PORTAL/DASHBOARD used after a student has registered.
+
+The portal must feel like the student has entered the actual Spectrum student ecosystem.
+
+==================================================
+1. CORE VISUAL STYLE
+==================================================
+
+Create a premium creative-campus interface combining:
+
+- Modern student dashboard
+- Editorial magazine design
+- Scrapbook aesthetic
+- College noticeboard
+- Handwritten annotations
+- Real campus photography
+- Paper textures
+- Tape elements
+- Doodles
+- Small stickers
+- Polaroid-inspired image blocks
+- Clean modern UI components
+
+The design should feel:
+
+Creative
+Young
+Energetic
+Human
+Academic
+Social
+Premium
+Experimental
+
+But NOT messy.
+
+The interface must have strong structure underneath the creative visual layer.
+
+Use the reference image's visual balance:
+
+approximately:
+70% clean UI
+20% photography / editorial elements
+10% decorative scrapbook elements
+
+Do not turn every component into a sticker.
+
+==================================================
+2. COLOR PALETTE
+==================================================
+
+Use a warm light base.
+
+Primary background:
+Warm off-white / paper white
+
+Secondary:
+Very light lavender / soft cream
+
+Typography:
+Deep charcoal / near-black
+
+Accent colors:
+Muted purple
+Soft yellow
+Coral
+Light cyan
+Soft pink
+Muted green
+
+IMPORTANT:
+
+Use colors selectively.
+
+Do not create rainbow-colored sections.
+
+Each page should have one dominant accent with 1–2 supporting colors.
+
+Avoid:
+Neon gradients
+Dark cyberpunk UI
+Excessive glassmorphism
+Heavy shadows
+Overly glossy UI
+
+The reference image should feel colorful because of photography, stickers and editorial elements — NOT because every UI component is brightly colored.
+
+==================================================
+3. TYPOGRAPHY
+==================================================
+
+Use a combination of:
+
+A bold modern sans-serif for navigation and interface.
+
+A heavy handwritten / marker-style display font for selected headings.
+
+A clean sans-serif for body text.
+
+Occasional handwritten annotations should appear around major sections.
+
+Examples:
+
+“YOUR CLUBS”
+“WHAT’S NEXT?”
+“FIND YOUR TRIBE”
+“GOOD PEOPLE. GREAT CLUBS.”
+“DON’T MISS THIS.”
+“SEE YOU THERE.”
+
+Do not use handwritten fonts for long paragraphs.
+
+==================================================
+4. STUDENT PORTAL STRUCTURE
+==================================================
+
+Create the following authenticated student portal:
+
+Dashboard
+My Clubs
+Discover
+Events
+Applications
+Announcements
+Notifications
+Profile
+Settings
+
+Use a clean left sidebar on desktop.
+
+Mobile should use bottom navigation.
+
+==================================================
+5. TOP NAVIGATION
+==================================================
+
+Create a clean top navigation bar.
+
+Left:
+
+SPECTRUM
+CLUB AUDITIONS ’26
+
+Center/right:
+
+Search
+
+Notifications
+
+Student profile avatar
+
+Profile dropdown
+
+The header should be mostly clean with small hand-drawn details around it.
+
+Do not make the navigation look like a traditional college ERP.
+
+==================================================
+6. SIDEBAR
+==================================================
+
+Create a vertical student navigation.
+
+Items:
+
+Home
+My Clubs
+Discover Clubs
+Events
+Applications
+Announcements
+Notifications
+Profile
+Settings
+
+Use simple line icons.
+
+The currently selected page should have:
+
+soft colored background
+small accent indicator
+slightly stronger typography
+
+Do not use huge colored navigation buttons.
+
+Add a small handwritten note near the bottom:
+
+“KEEP EXPLORING ✦”
+
+==================================================
+7. DASHBOARD HERO
+==================================================
+
+Create a welcoming dashboard hero.
+
+Heading:
+
+“WELCOME BACK, [STUDENT NAME].”
+
+Subheading:
+
+“Your campus is full of ideas, people and possibilities.”
+
+Use a large campus photograph similar to the reference image.
+
+The photograph should show:
+
+College students
+Campus architecture
+Students walking
+Groups working together
+Creative activities
+
+Overlay small handwritten annotations such as:
+
+“GOOD IDEAS”
+“BETTER PEOPLE”
+“FIND YOUR TRIBE”
+
+Use subtle arrows and doodles around the image.
+
+Do not cover the photograph with too many elements.
+
+==================================================
+8. STUDENT QUICK STATS
+==================================================
+
+Create four clean information blocks:
+
+MY CLUBS
+3
+
+UPCOMING EVENTS
+5
+
+APPLICATIONS
+2
+
+NOTIFICATIONS
+7
+
+Use simple typography.
+
+Add small handwritten annotations around selected statistics.
+
+Example:
+
+“YOUR PEOPLE”
+“DON’T MISS THIS”
+“WHAT’S NEXT?”
+
+==================================================
+9. MY CLUBS
+==================================================
+
+Create a major dashboard section:
+
+“YOUR CLUBS”
+
+Display clubs the student has joined or registered for.
+
+Each club card should include:
+
+Dynamic club logo
+Club name
+Category
+Role
+Membership status
+Upcoming event
+View Club button
+
+Use the same visual style as the reference image's colorful club cards.
+
+However, keep each card structurally clean.
+
+CLUB LOGO:
+
+The logo must be dynamically loaded from the club's admin-managed profile.
+
+Never hardcode club logos.
+
+Support:
+
+SVG
+PNG
+JPG
+WebP
+Transparent logos
+Different logo aspect ratios
+
+Maintain correct aspect ratio.
+
+==================================================
+10. DISCOVER CLUBS
+==================================================
+
+Create a section:
+
+“FIND YOUR TRIBE.”
+
+Supporting text:
+
+“Different clubs. Same campus. Endless possibilities.”
+
+Show club cards:
+
+Robotics & Drone Club
+Coding Club
+AI/ML Club
+Design Club
+Photography Club
+Gaming & Esports Club
+Literary Club
+Cultural Club
+Social & Outreach Club
+
+Each card:
+
+Club image
+Dynamic logo
+Club name
+Short description
+Category
+Arrow
+
+Use colorful photography but keep the UI neutral.
+
+==================================================
+11. UPCOMING EVENTS
+==================================================
+
+Create:
+
+“WHAT’S HAPPENING?”
+
+Display events in an editorial timeline/list.
+
+Example:
+
+15 SEP
+Club Orientation
+
+20 SEP
+Design Workshop
+
+27 SEP
+Robotics Challenge
+
+03 OCT
+Cultural Night
+
+Each event should show:
+
+Date
+Event name
+Club
+Location
+Time
+Registration status
+
+Use small doodles and handwritten arrows around selected events.
+
+==================================================
+12. APPLICATION TRACKER
+==================================================
+
+Create:
+
+“YOUR APPLICATIONS”
+
+Show application cards.
+
+Example:
+
+Design Club
+Application submitted
+Status: Under Review
+
+Robotics Club
+Application approved
+
+Photography Club
+Interview scheduled
+
+Use subtle status indicators.
+
+Statuses:
+
+Pending
+Under Review
+Interview
+Approved
+Rejected
+
+Do not use excessively bright status colors.
+
+==================================================
+13. ANNOUNCEMENTS
+==================================================
+
+Create a section:
+
+“CAMPUS BUZZ”
+
+Show announcements from clubs.
+
+Each announcement:
+
+Club logo
+Club name
+Announcement title
+Short description
+Date
+View announcement
+
+Allow filtering:
+
+All
+My Clubs
+Events
+Important
+
+==================================================
+14. NOTIFICATIONS
+==================================================
+
+Create a clean notification center.
+
+Examples:
+
+“Your application to Design Club has been approved.”
+
+“Robotics Club has announced a new workshop.”
+
+“Photography Club interview is tomorrow.”
+
+“Your event registration is confirmed.”
+
+Use small icons and timestamps.
+
+==================================================
+15. STUDENT PROFILE
+==================================================
+
+Create a premium student profile page.
+
+Header:
+
+Large profile photograph
+
+Student name
+
+USN / Student ID
+
+Department
+
+Year
+
+Section
+
+Profile completion percentage
+
+Sections:
+
+Personal Information
+Academic Information
+My Clubs
+Interests
+Achievements
+Events Attended
+
+Add:
+
+Edit Profile
+
+Use editorial layout rather than traditional form-heavy college ERP styling.
+
+==================================================
+16. MY CLUBS PAGE
+==================================================
+
+Create a dedicated My Clubs page.
+
+Large heading:
+
+“MY PEOPLE.”
+
+Display all registered clubs.
+
+Each club gets a larger editorial card containing:
+
+Club logo
+Club cover image
+Club name
+Category
+Role
+Members
+Upcoming event
+Recent announcement
+View Club
+
+Allow:
+
+Search
+Filter
+Sort
+
+==================================================
+17. EVENTS PAGE
+==================================================
+
+Create a complete student event discovery page.
+
+Header:
+
+“WHAT’S HAPPENING?”
+
+Views:
+
+Upcoming
+This Week
+This Month
+Registered
+
+Each event should contain:
+
+Image
+Club logo
+Event name
+Date
+Time
+Location
+Description
+Registration status
+
+Primary action:
+
+Register
+
+If already registered:
+
+Registered ✓
+
+==================================================
+18. REGISTRATION STATUS
+==================================================
+
+Create a dedicated page where students can track their club registration.
+
+Show a visual timeline:
+
+Registration Submitted
+↓
+Application Review
+↓
+Interview
+↓
+Decision
+↓
+Membership
+
+Use clean timeline graphics.
+
+Add subtle handwritten annotations such as:
+
+“YOU’RE ALMOST THERE.”
+
+==================================================
+19. PROFILE SETTINGS
+==================================================
+
+Create:
+
+Account Settings
+Notification Preferences
+Privacy
+Password
+Connected Clubs
+
+Keep the settings interface much cleaner than the creative dashboard.
+
+Creative elements should become minimal here.
+
+==================================================
+20. SCRAPBOOK DETAILS
+==================================================
+
+Use these visual details throughout the portal, but sparingly:
+
+Hand-drawn arrows
+Stars
+Small crowns
+Underlines
+Marker strokes
+Tape
+Paper scraps
+Small stickers
+Handwritten notes
+Doodles
+Polaroid-style photos
+Torn-paper edges
+
+Use these primarily around:
+
+Hero sections
+Club sections
+Events
+Important CTAs
+Empty states
+
+Do NOT place doodles behind important text.
+
+Do NOT reduce readability.
+
+==================================================
+21. PHOTOGRAPHY
+==================================================
+
+Use realistic high-quality college photography.
+
+Preferred scenes:
+
+Students walking through campus
+Students collaborating
+Coding
+Robotics
+Photography
+Music
+Sports
+Design
+Cultural activities
+Outdoor campus events
+
+Photography should feel candid and authentic.
+
+Avoid overly staged corporate stock photography.
+
+Use slightly warm photographic treatment.
+
+==================================================
+22. INTERACTIONS
+==================================================
+
+Use subtle Framer Motion-style interactions.
+
+Club card hover:
+
+Image slightly zooms
+Arrow moves
+Small doodle appears
+
+Button hover:
+
+Small movement
+Subtle background transition
+
+Navigation:
+
+Smooth active-state transition
+
+Notifications:
+
+Small slide/fade animation
+
+Page transitions:
+
+Fast and subtle
+
+Do NOT use:
+
+Large bouncing animations
+Excessive parallax
+Continuous floating objects
+Glowing effects
+
+==================================================
+23. EMPTY STATES
+==================================================
+
+Create creative but useful empty states.
+
+No Clubs:
+
+“YOUR TRIBE IS WAITING.”
+
+No Events:
+
+“NOTHING ON THE CALENDAR... YET.”
+
+No Applications:
+
+“READY TO FIND YOUR THING?”
+
+No Notifications:
+
+“YOU’RE ALL CAUGHT UP.”
+
+Use small illustrations/doodles.
+
+==================================================
+24. MOBILE DESIGN
+==================================================
+
+Do NOT simply shrink desktop.
+
+Create a genuine mobile experience.
+
+Bottom navigation:
+
+Home
+Clubs
+Events
+Notifications
+Profile
+
+Dashboard should prioritize:
+
+Greeting
+My Clubs
+Upcoming Events
+Applications
+Announcements
+
+Use horizontal scrolling for club cards where appropriate.
+
+Maintain large touch targets.
+
+Keep handwritten decorations smaller on mobile.
+
+==================================================
+25. ACCESSIBILITY
+==================================================
+
+Ensure:
+
+Strong contrast
+Readable typography
+Keyboard navigation
+Visible focus states
+Accessible buttons
+Proper labels
+Screen-reader support
+Reduced-motion support
+
+Creative styling must never compromise usability.
+
+==================================================
+26. OVERALL DESIGN BALANCE
+==================================================
+
+The final student portal should feel like:
+
+A modern college social platform
++
+An editorial magazine
++
+A creative scrapbook
++
+A premium SaaS dashboard
+
+The reference image should inspire the visual identity, but the resulting interface must remain functional.
+
+Do not copy the exact layout of the reference image.
+
+Create a complete student portal system based on its visual language.
+
+==================================================
+27. FINAL DESIGN STATEMENT
+==================================================
+
+The final product should communicate:
+
+“SAME CAMPUS.
+DIFFERENT FREQUENCIES.”
+
+Students should feel that this is THEIR campus community space.
+
+It should feel:
+
+Personal
+Creative
+Social
+Energetic
+Welcoming
+Premium
+Modern
+
+The interface should be visually memorable while remaining easy to use.
+
+FINAL RULE:
+
+Keep the visual design expressive,
+but keep the UX simple.
+
+Creative outside.
+Structured inside.

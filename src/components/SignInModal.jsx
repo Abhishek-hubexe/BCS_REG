@@ -6,7 +6,7 @@ export default function SignInModal({ isOpen, onClose, onSuccessRegistration }) 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    department: 'Computer Science & Engineering (CSE)',
+    department: 'CS',
     year: '1st Year',
     phone_whatsapp: '',
     csn_esn: '',
@@ -138,14 +138,15 @@ export default function SignInModal({ isOpen, onClose, onSuccessRegistration }) 
                   onChange={handleChange}
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl glass-input bg-[#0f172a] text-white"
                 >
-                  <option value="Computer Science & Engineering (CSE)">CSE</option>
-                  <option value="Electronics & Communication (ECE)">ECE</option>
-                  <option value="Electrical & Electronics (EEE)">EEE</option>
-                  <option value="Mechanical Engineering (ME)">ME</option>
-                  <option value="Civil Engineering (CE)">CE</option>
-                  <option value="Artificial Intelligence & Data Science (AI/DS)">AI & DS</option>
-                  <option value="Information Technology (IT)">IT</option>
-                  <option value="Biotechnology / Chemical">Chemical / Biotech</option>
+                  <option value="EEE">EEE</option>
+                  <option value="ECE">ECE</option>
+                  <option value="CS">CS</option>
+                  <option value="ECS">ECS</option>
+                  <option value="ME">ME</option>
+                  <option value="CV">CV</option>
+                  <option value="IS">IS</option>
+                  <option value="AI/ML">AI/ML</option>
+                  <option value="BT">BT</option>
                 </select>
               </div>
             </div>
