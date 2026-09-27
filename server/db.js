@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loadStateFromSupabase, syncStateToSupabase } from './supabase.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -8,30 +9,35 @@ const defaultJsonPath = path.join(__dirname, 'bcs_data.json');
 const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
 const jsonPath = isServerless ? path.join('/tmp', 'bcs_data.json') : defaultJsonPath;
 
-// Initialize /tmp/bcs_data.json from default bundled data if on serverless
-if (isServerless && !fs.existsSync(jsonPath) && fs.existsSync(defaultJsonPath)) {
-  try {
-    fs.copyFileSync(defaultJsonPath, jsonPath);
-  } catch (e) {
-    console.error('Failed to copy initial data to /tmp:', e);
+let inMemoryData = null;
+
+try {
+  const remoteData = await loadStateFromSupabase();
+  if (remoteData) {
+    inMemoryData = remoteData;
+  } else {
+    // Fallback to local default file
+    if (fs.existsSync(defaultJsonPath)) {
+      inMemoryData = JSON.parse(fs.readFileSync(defaultJsonPath, 'utf8'));
+    } else {
+      inMemoryData = { users: [], clubs: [], registrations: [], events: [], announcements: [], audit_logs: [], media_library: [] };
+    }
   }
+} catch (e) {
+  console.error('Initial data load failed:', e);
+  inMemoryData = { users: [], clubs: [], registrations: [], events: [], announcements: [], audit_logs: [], media_library: [] };
 }
 
 export function loadData() {
-  try {
-    const target = fs.existsSync(jsonPath) ? jsonPath : defaultJsonPath;
-    if (!fs.existsSync(target)) {
-      return { users: [], clubs: [], registrations: [], events: [], announcements: [], audit_logs: [], media_library: [] };
-    }
-    const raw = fs.readFileSync(target, 'utf8');
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error('Error reading bcs_data.json:', err);
-    return { users: [], clubs: [], registrations: [], events: [], announcements: [], audit_logs: [], media_library: [] };
-  }
+  return inMemoryData;
 }
 
 export function saveData(data) {
+  inMemoryData = data;
+  
+  // Fire and forget sync to Supabase (Vercel persistence)
+  syncStateToSupabase(data).catch(console.error);
+
   try {
     fs.writeFileSync(jsonPath, JSON.stringify(data, null, 2), 'utf8');
   } catch (err) {

@@ -92,4 +92,28 @@ export async function syncRegistrationToSupabase(reg, clubName = '', studentEmai
   }
 }
 
+/**
+ * Persist bcs_data.json to Supabase to survive Vercel cold starts
+ */
+export async function syncStateToSupabase(appData) {
+  if (!supabase) return null;
+  try {
+    const { error } = await supabase.from('app_state').upsert({ id: 1, data: appData });
+    if (error) console.error('Supabase sync app_state error:', error.message);
+  } catch (e) {
+    console.error('Error syncing app_state:', e.message);
+  }
+}
+
+export async function loadStateFromSupabase() {
+  if (!supabase) return null;
+  try {
+    const { data, error } = await supabase.from('app_state').select('data').eq('id', 1).single();
+    if (error || !data) return null;
+    return data.data;
+  } catch (e) {
+    return null;
+  }
+}
+
 export default supabase;

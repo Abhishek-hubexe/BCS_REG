@@ -42,6 +42,12 @@ CREATE TABLE IF NOT EXISTS registrations (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+-- 3.5 App State for Vercel persistence (bcs_data.json)
+CREATE TABLE IF NOT EXISTS app_state (
+  id INT PRIMARY KEY,
+  data JSONB NOT NULL
+);
+
 -- Indexes for fast lookups
 CREATE INDEX IF NOT EXISTS idx_students_email ON students (email);
 CREATE INDEX IF NOT EXISTS idx_students_student_id ON students (student_id);
