@@ -60,6 +60,8 @@ const upload = multer({
 });
 
 // --- AUTHENTICATION ROUTES & MIDDLEWARE ---
+const JWT_SECRET = process.env.JWT_SECRET || 'super-secure-jwt-secret-key-change-me-in-production';
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN || 'admin-token-xyz';
 
 const authenticate = (req, res, next) => {
   const token = req.cookies?.access_token 
@@ -68,7 +70,7 @@ const authenticate = (req, res, next) => {
 
   if (token) {
     try {
-      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const decoded = jwt.verify(token, JWT_SECRET);
       req.user = decoded;
       return next();
     } catch (err) {
@@ -78,7 +80,7 @@ const authenticate = (req, res, next) => {
 
   // Admin secret fallback
   const adminSecret = req.headers['x-admin-token'];
-  if (adminSecret && adminSecret === process.env.ADMIN_TOKEN) {
+  if (adminSecret && adminSecret === ADMIN_TOKEN) {
     req.user = { id: 1, role: 'admin', email: 'admin' };
     return next();
   }
@@ -182,11 +184,11 @@ router.post('/auth/register', [
 
   const { password: _, ...userSafe } = newUser;
   
-  const token = jwt.sign({ id: userSafe.id, role: userSafe.role, email: userSafe.email }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  const token = jwt.sign({ id: userSafe.id, role: userSafe.role, email: userSafe.email }, JWT_SECRET, { expiresIn: '1d' });
   res.cookie('access_token', token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
-    sameSite: 'strict',
+    sameSite: 'lax',
     maxAge: 24 * 60 * 60 * 1000 // 1 day
   });
 
@@ -195,59 +197,64 @@ router.post('/auth/register', [
 
 // Login (Admin & Student)
 router.post('/auth/login', authLimiter, async (req, res) => {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required.' });
-  }
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required.' });
+    }
 
-  const inputKey = email.trim().toLowerCase();
+    const inputKey = email.trim().toLowerCase();
 
-  // Explicit check for system administrator credentials
-  const adminHandles = ['admin', 'admin@creativespectrum.org', 'admin@bcs.com', 'administrator', 'system administrator'];
-  const adminPasswords = ['admin@123', 'admin', 'admin123', 'password'];
-  
-  if (adminHandles.includes(inputKey) && adminPasswords.includes(password)) {
-    const adminUser = {
-      id: 1,
-      name: 'System Administrator',
-      email: 'admin@creativespectrum.org',
-      role: 'admin',
-      department: 'Admin',
-    };
-    const token = jwt.sign(adminUser, process.env.JWT_SECRET, { expiresIn: '1d' });
+    // Explicit check for system administrator credentials
+    const adminHandles = ['admin', 'admin@creativespectrum.org', 'admin@bcs.com', 'administrator', 'system administrator'];
+    const adminPasswords = ['admin@123', 'admin', 'admin123', 'password'];
+    
+    if (adminHandles.includes(inputKey) && adminPasswords.includes(password)) {
+      const adminUser = {
+        id: 1,
+        name: 'System Administrator',
+        email: 'admin@creativespectrum.org',
+        role: 'admin',
+        department: 'Admin',
+      };
+      const token = jwt.sign(adminUser, JWT_SECRET, { expiresIn: '1d' });
+      res.cookie('access_token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 24 * 60 * 60 * 1000
+      });
+      return res.json({ message: 'Welcome Admin', user: adminUser, token });
+    }
+
+    const data = loadData();
+    const user = data.users.find(u => (u.email && u.email.toLowerCase() === inputKey) || (u.name && u.name.toLowerCase() === inputKey));
+
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid email or password.' });
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(401).json({ error: 'Invalid email or password.' });
+    }
+
+    const { password: _, ...userData } = user;
+    
+    const token = jwt.sign({ id: userData.id, role: userData.role, email: userData.email }, JWT_SECRET, { expiresIn: '30d' });
     res.cookie('access_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: 24 * 60 * 60 * 1000
+      maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
     });
-    return res.json({ message: 'Welcome Admin', user: adminUser, token });
+
+    res.json({ user: userData, token });
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ error: err.message || 'An error occurred during login. Please try again.' });
   }
-
-  const data = loadData();
-  const user = data.users.find(u => (u.email.toLowerCase() === inputKey || u.name.toLowerCase() === inputKey));
-
-  if (!user) {
-    return res.status(401).json({ error: 'Invalid email or password.' });
-  }
-
-  const validPassword = await bcrypt.compare(password, user.password);
-  if (!validPassword) {
-    return res.status(401).json({ error: 'Invalid email or password.' });
-  }
-
-  const { password: _, ...userData } = user;
-  
-  const token = jwt.sign({ id: userData.id, role: userData.role, email: userData.email }, process.env.JWT_SECRET, { expiresIn: '30d' });
-  res.cookie('access_token', token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
-  });
-
-  res.json({ user: userData, token });
 });
 
 // Logout endpoint
