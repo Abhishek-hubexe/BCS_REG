@@ -211,7 +211,7 @@ router.post('/auth/login', authLimiter, async (req, res) => {
 
     // Explicit check for system administrator credentials
     const adminHandles = ['admin', 'admin@creativespectrum.org', 'admin@bcs.com', 'administrator', 'system administrator'];
-    const adminPasswords = ['admin@123', 'admin', 'admin123', 'password'];
+    const adminPasswords = ['SuperSecretAdmin2026!'];
     
     if (adminHandles.includes(inputKey) && adminPasswords.includes(password)) {
       const adminUser = {
