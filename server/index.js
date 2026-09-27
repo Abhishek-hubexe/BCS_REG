@@ -86,9 +86,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`================================================`);
-  console.log(`BC Creative Spectrum Server listening on port ${PORT}`);
-  console.log(`API URL: http://localhost:${PORT}/api`);
-  console.log(`================================================`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`================================================`);
+    console.log(`BC Creative Spectrum Server listening on port ${PORT}`);
+    console.log(`API URL: http://localhost:${PORT}/api`);
+    console.log(`================================================`);
+  });
+}
+
+export default app;
