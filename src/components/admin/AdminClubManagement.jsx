@@ -102,6 +102,9 @@ export default function AdminClubManagement({
         if (logoRes.ok) {
           const logoData = await logoRes.json();
           updatedClub = logoData.club;
+        } else {
+          const errData = await logoRes.json();
+          throw new Error(errData.error || 'Failed to upload logo');
         }
       }
 
@@ -118,6 +121,9 @@ export default function AdminClubManagement({
         if (coverRes.ok) {
           const coverData = await coverRes.json();
           updatedClub = coverData.club;
+        } else {
+          const errData = await coverRes.json();
+          throw new Error(errData.error || 'Failed to upload cover image');
         }
       }
 
@@ -134,6 +140,9 @@ export default function AdminClubManagement({
         if (uploadRes.ok) {
           const uploadData = await uploadRes.json();
           updatedClub = uploadData.club;
+        } else {
+          const errData = await uploadRes.json();
+          throw new Error(errData.error || `Failed to upload ${type}`);
         }
       };
 
